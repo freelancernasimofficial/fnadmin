@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-#soomOutOnClick:active {
+#zoomOutOnClick:active {
   transform: scale(0.97);
+}
+a {
+  color: #3718ff;
+}
+.dark a {
+  color: #2a9eff;
+}
+
+#isLeftDrawerActive:checked + #left_drawer_nav {
+  transform: translateX(0);
+}
+#isRightDrawerActive:checked + #right_drawer_nav {
+  transform: translateX(0);
 }

@@ -23,7 +23,14 @@ export default function TextField({
           {label}
         </label>
       ) : null}
-      <div className='flex overflow-hidden  items-center h-11 rounded-md bg-gray-300 dark:bg-gray-800'>
+      <div
+        className='
+      flex overflow-hidden
+      items-center h-11
+      rounded-md
+      bg-gray-100 
+      dark:bg-gray-800'
+      >
         <span className='inline-flex h-full  items-center px-3 text-sm text-gray-900 bg-gray-200   dark:bg-gray-700 dark:text-gray-400'>
           {Icon ? (
             <Icon className='text-gray-900 dark:text-gray-400' size={20} />

@@ -24,7 +24,7 @@ export default function Button({
 }: Props) {
   return (
     <button
-      id='soomOutOnClick'
+      id='zoomOutOnClick'
       onClick={onClick}
       className={`${getClassName(
         variant,

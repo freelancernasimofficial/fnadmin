@@ -28,7 +28,7 @@ const config: Config = {
     },
 
     extend: {
-      backgroundColor: {
+      colors: {
         FnPrimary: "#3718ff",
         FnSecondary: "#ff004f",
         FnError: "#f44336",
@@ -37,15 +37,7 @@ const config: Config = {
         FnInfo: "#04cbff",
         FnWarning: "#ff9103",
         FnYellow: "#ffcb00",
-        "gray-100": "#f2f4f7",
-        "gray-200": "#eaecf0",
-        "gray-300": "#d0d5dd",
-        "gray-400": "#98a2b3",
-        "gray-500": "#667085",
-        "gray-600": "#485467",
-        "gray-700": "#334054",
-        "gray-800": "#1c2939",
-        "gray-900": "#101828",
+        FnLinkDark: "#2a9eff",
       },
     },
   },

@@ -13,7 +13,7 @@ export default function page({}: Props) {
   return (
     <section className='bg-gray-50 dark:bg-gray-950'>
       <div className='flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0'>
-        <div className='w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-900 dark:border-gray-700'>
+        <div className='w-full bg-white rounded-lg shadow dark:border dark:border-gray-700  md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-900 '>
           <div className='p-6 space-y-4 md:space-y-6 sm:p-8'>
             <div className='mb-4'>
               <Image
@@ -51,17 +51,17 @@ export default function page({}: Props) {
                 <CheckBox title='Remember me' />
                 <Link
                   href='#'
-                  className='text-base font-medium text-primary-600 hover:underline dark:text-primary-500'
+                  className='text-base font-medium text-FnPrimary hover:underline dark:text-FnLinkDark'
                 >
                   Forgot password?
                 </Link>
               </div>
               <Button Icon={IoLogIn} className='w-full' title='Sign In' />
-              <p className='text-sm font-light text-gray-500 dark:text-gray-400'>
+              <p className='text-base font-medium  text-gray500 dark:text-gray-400'>
                 Don’t have an account yet?{" "}
                 <Link
                   href='#'
-                  className='font-medium text-primary-600 hover:underline dark:text-primary-500'
+                  className='font-medium ml-2 text-FnLinkDark hover:underline dark:text-primary-500'
                 >
                   Sign up
                 </Link>

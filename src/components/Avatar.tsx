@@ -3,14 +3,16 @@ import React from "react";
 
 type Props = {
   active?: boolean;
+  size?: number;
 };
 
-export default function Avatar({ active }: Props) {
+export default function Avatar({ active, size }: Props) {
   return (
-    <div className='relative'>
+    <div className='relative cursor-pointer'>
       <Image
         width={40}
         height={40}
+        style={{ width: size, height: size, borderRadius: "999px" }}
         className='w-10 h-10 rounded-full'
         src='/images/users/avatars/profile-picture-5.jpg'
         alt='avatar'
