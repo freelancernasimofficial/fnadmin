@@ -24,8 +24,8 @@ const config: Config = {
     },
     fontSize: {
       sm: "0.875rem",
-      base: "0.9rem",
-      xl: "1.1rem",
+      base: "0.95rem",
+      xl: "1rem",
       "2xl": "1.2rem",
       "3xl": "1.4rem",
       "4xl": "1.6rem",

@@ -1,9 +1,12 @@
 import Image from "next/image";
 import React from "react";
 import logo from "@/public/images/logo/nasim_dark.svg";
+import light_logo from "@/public/images/logo/nasim_light.svg";
+
 import avatarphoto from "@/public/images/users/avatars/profile-picture-2.jpg";
 import Link from "next/link";
 import Avatar from "../Avatar";
+import { BiMenuAltLeft, BiMenuAltRight } from "react-icons/bi";
 type Props = {};
 
 export default function Header({}: Props) {
@@ -14,42 +17,32 @@ export default function Header({}: Props) {
           <label
             htmlFor='isLeftDrawerActive'
             id='leftDrawerOpenLabel'
-            className='p-2  mr-2 text-gray-600 rounded-lg cursor-pointer hidden md:block hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-800 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white'
+            className='p-2 group  mr-2 text-gray-600 rounded-lg cursor-pointer hidden md:block hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-800 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white'
           >
-            <svg
-              aria-hidden='true'
-              className='w-6 h-6'
-              fill='currentColor'
-              viewBox='0 0 20 20'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <path
-                fillRule='evenodd'
-                d='M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z'
-                clipRule='evenodd'
-              />
-            </svg>
-            <svg
-              aria-hidden='true'
-              className='hidden w-6 h-6'
-              fill='currentColor'
-              viewBox='0 0 20 20'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <path
-                fillRule='evenodd'
-                d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z'
-                clipRule='evenodd'
-              />
-            </svg>
+            <BiMenuAltLeft
+              className='
+            dark:text-gray-500
+            group-hover:text-gray-950
+            group-hover:stroke-gray-950
+            dark:group-hover:text-white
+             text-gray-500
+             stroke-1 stroke-gray-500 dark:stroke-gray-500 dark:group-hover:stroke-white dark:hover:text-white hover:text-black hover:stroke-black w-6 h-6'
+            />
+
             <span className='sr-only'>Toggle sidebar</span>
           </label>
 
-          <Link
-            href='https://flowbite.com'
-            className='flex items-center justify-between mr-4'
-          >
-            <Image src={logo} className='mr-3 h-8' alt='Flowbite Logo' />
+          <Link href='/' className='flex justify-start w-32 mr-4'>
+            <Image
+              src={logo}
+              className='mr-3 h-8 hidden dark:block'
+              alt='fnadmin Logo'
+            />
+            <Image
+              src={light_logo}
+              className='mr-3 h-8 dark:hidden'
+              alt='fnadmin Logo'
+            />
           </Link>
         </div>
         <div className='flex items-center lg:order-2'>

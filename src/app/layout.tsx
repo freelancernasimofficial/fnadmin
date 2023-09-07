@@ -1,7 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
+import Header from "../components/layout/Header";
+import SidebarLeft from "../components/layout/SidebarLeft";
+import SidebarRight from "../components/layout/SidebarRight";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,6 +23,9 @@ export default function RootLayout({
           inter.className + " " + "dark:bg-gray-950 bg-gray-200 antialiased"
         }
       >
+        <Header />
+        <SidebarLeft />
+        <SidebarRight />
         {children}
       </body>
     </html>
