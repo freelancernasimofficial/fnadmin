@@ -9,6 +9,19 @@ const config: Config = {
 
   darkMode: "class",
   theme: {
+    screens: {
+      "2xl": { max: "1536px" },
+
+      xl: { max: "1280px" },
+
+      lg: { max: "1024px" },
+
+      md: { max: "768px" },
+
+      sm: { max: "640px" },
+
+      xs: { max: "500px" },
+    },
     fontSize: {
       sm: "0.875rem",
       base: "0.9rem",
