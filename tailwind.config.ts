@@ -41,6 +41,9 @@ const config: Config = {
     },
 
     extend: {
+      width: {
+        "100": "400px",
+      },
       colors: {
         FnPrimary: "#3718ff",
         FnSecondary: "#ff004f",

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-#zoomOutOnClick:active {
+.zoomOutOnClick:active {
   transform: scale(0.97);
 }
 a {

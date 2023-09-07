@@ -24,9 +24,8 @@ export default function Button({
 }: Props) {
   return (
     <button
-      id='zoomOutOnClick'
       onClick={onClick}
-      className={`${getClassName(
+      className={`zoomOutOnClick ${getClassName(
         variant,
       )} text-center flex-row text-base justify-center flex items-center ${
         className ?? " "

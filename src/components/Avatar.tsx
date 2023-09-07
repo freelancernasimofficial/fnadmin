@@ -1,14 +1,15 @@
 import Image from "next/image";
-import React from "react";
+import React, { HTMLAttributes } from "react";
 
 type Props = {
   active?: boolean;
   size?: number;
+  className?: HTMLAttributes<HTMLElement>["className"];
 };
 
-export default function Avatar({ active, size }: Props) {
+export default function Avatar({ className, active, size }: Props) {
   return (
-    <div className='relative cursor-pointer'>
+    <div className={`relative cursor-pointer ${className ?? ""}`}>
       <Image
         width={40}
         height={40}
