@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react'
 
-type Props = {} & React.HTMLAttributes<HTMLDivElement>;
+type Props = {} & React.HTMLAttributes<HTMLDivElement>
 
 export default function Row({ className, children }: Props) {
-  return (
-    <div className={`flex flex-row items-center ${className ?? ""}`}>
-      {children}
-    </div>
-  );
+  return <div className={`flex flex-row items-center ${className ?? ''}`}>{children}</div>
 }
