@@ -18,7 +18,7 @@ export default function Avatar({ active, size }: Props) {
         alt='avatar'
       />
       <span
-        className={`bottom-0 left-7 absolute  w-3.5 h-3.5 ${
+        className={`-bottom-1 right-0 absolute  w-3.5 h-3.5 ${
           active ? "bg-green-400" : "bg-red-400"
         } border-2 border-white dark:border-gray-800 rounded-full`}
       />

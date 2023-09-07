@@ -44,9 +44,7 @@ export default function Header({}: Props) {
             </svg>
             <span className='sr-only'>Toggle sidebar</span>
           </label>
-          <label htmlFor='isLeftDrawerActive' id='leftDrawerCloseLabel'>
-            CLOSE LEFT
-          </label>
+
           <Link
             href='https://flowbite.com'
             className='flex items-center justify-between mr-4'
@@ -516,11 +514,12 @@ export default function Header({}: Props) {
               </a>
             </div>
           </div>
-          <label htmlFor='isRightDrawerActive' id='rightDrawerOpenLabel'>
+          <label
+            htmlFor='isRightDrawerActive'
+            className='mr-2 ml-3'
+            id='rightDrawerOpenLabel'
+          >
             <Avatar size={32} />
-          </label>
-          <label htmlFor='isRightDrawerActive' id='rightDrawerCloseLabel'>
-            CLOSE
           </label>
         </div>
       </div>
