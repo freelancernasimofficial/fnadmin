@@ -12,12 +12,16 @@ export default function SidebarLeft({}: Props) {
         aria-labelledby="leftDrawerOpenLabel leftDrawerCloseLabel"
         id="isLeftDrawerActive"
       />
-      <aside className="peer-checked/left_drawer_nav:translate-x-0 fixed p-2 top-0 left-0 z-40 h-full pt-16 transition-transform md:-translate-x-full bg-white border-r border-gray-200 translate-x-0 dark:bg-gray-900 dark:border-gray-800 flex flex-col justify-between">
+      <aside className="peer-checked/left_drawer_nav:translate-x-0 fixed py-3 top-0 left-0 z-40 h-full pt-16 transition-transform md:-translate-x-full bg-white border-r border-gray-200 translate-x-0 dark:bg-gray-900 dark:border-gray-800 flex flex-col  justify-between w-[260px]">
         <Menu>
-          {/* <MenuItem href="/dashboard" Icon={IoApps} title="Dashboard" />
-          <MenuItem href="/dashboard/courses" Icon={IoSchool} title="Courses" /> */}
-          <MenuItemDropDown Icon={IoHome} title="Courses" />
-          <MenuItemDropDown Icon={IoSchool} title="Education" />
+          <MenuItem href="/dashboard" Icon={IoApps} title="Dashboard" />
+          <MenuItem href="/dashboard/courses" Icon={IoSchool} title="Courses" />
+
+          <MenuItemDropDown Icon={IoSchool} title="Education">
+            <MenuItem href="/dashboard/courses" title="Courses" />
+            <MenuItem href="/" title="Education" />
+            <MenuItem href="/signin" title="Sign In" />
+          </MenuItemDropDown>
         </Menu>
 
         <div className="bg-gray-800 flex   flex-row items-center justify-between ">
