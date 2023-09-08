@@ -4,7 +4,7 @@ export default function Logo(props: SVGAttributes<SVGElement>) {
   return (
     <svg
       width={127}
-      preserveAspectRatio="preserve"
+      preserveAspectRatio="none"
       version="1.1"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       x="0"
@@ -134,7 +134,7 @@ export function NasimIcon(props: SVGAttributes<SVGElement>) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="50px"
-      preserveAspectRatio="preserve"
+      preserveAspectRatio="none"
       version="1.1"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       x="0"

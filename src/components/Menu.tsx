@@ -6,9 +6,9 @@ type Props = {
   children: React.ReactNode
 } & HTMLAttributes<HTMLDivElement>
 
-export default function Menu({ children, ...props }: Props) {
+export default function Menu({ children, className, ...props }: Props) {
   return (
-    <div className="sidebarmenu flex flex-col flex-1 font-medium" {...props}>
+    <div id="leftDrawerMenu" className={`flex flex-col flex-1 font-medium ${className ?? ''}`} {...props}>
       {children}
     </div>
   )
@@ -23,7 +23,7 @@ export const MenuItem = ({ className, href, title, Icon }: MenuItemProps) => {
   return (
     <Link
       href={href}
-      className={`flex items-center mx-3 p-2 text-gray-900 rounded-md dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 group ${
+      className={`flex items-center h-10 mx-3 p-2 text-gray-900 rounded-md dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 group ${
         className ?? ''
       }`}
     >
@@ -39,11 +39,12 @@ type DropDownLabel = {
   title: string
   Icon?: typeof IoHomeOutline
   children?: React.ReactNode
+  className?: HTMLAttributes<HTMLDivElement>['className']
 }
 
-export const MenuItemDropDown = ({ children, title, Icon }: DropDownLabel) => {
+export const MenuItemDropDown = ({ children, className, title, Icon }: DropDownLabel) => {
   return (
-    <div className="dropdownItemWrapper flex flex-col">
+    <div id="dropdownItemWrapper" className={`flex  flex-col ${className ?? ''}`}>
       <input
         type="checkbox"
         className="scale-0 invisible w-0 h-0 hidden absolute left-[99999px] peer/dropdown top-0"
@@ -51,7 +52,7 @@ export const MenuItemDropDown = ({ children, title, Icon }: DropDownLabel) => {
       />
       <label
         htmlFor={title?.replaceAll(' ', '')}
-        className="flex  group flex-row p-2 mx-3  flex-1  items-center justify-between cursor-pointer peer-checked/dropdown:[&>div>#dropdowncaretUp]:!inline peer-checked/dropdown:[&>div>#dropdowncaretdown]:!hidden  rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
+        className="flex h-10 max-h-10 min-h-10  group flex-row p-2 mx-3    items-center justify-between cursor-pointer peer-checked/dropdown:[&>div>#dropdowncaretUp]:!inline peer-checked/dropdown:[&>div>#dropdowncaretdown]:!hidden  rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
       >
         {Icon ? (
           <Icon className="flex-shrink-0 w-5 h-5 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
