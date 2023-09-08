@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .zoomOutOnClick:active {
-  transform: scale(0.97);
+  transform: scale(0.92);
 }
 a {
   color: #3718ff;

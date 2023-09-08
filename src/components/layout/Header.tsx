@@ -22,7 +22,7 @@ export default function Header({}: Props) {
           <label
             htmlFor="isLeftDrawerActive"
             id="leftDrawerOpenLabel"
-            className="p-2 group mr-2 hidden md:block text-gray-600 rounded-lg cursor-pointer  hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-800 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
+            className="p-2 group mr-1 hidden md:block text-gray-600 rounded-lg cursor-pointer  hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-800 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
           >
             <HiMenuAlt2
               className="
@@ -39,7 +39,7 @@ export default function Header({}: Props) {
 
           <Link href="/" className="flex justify-start">
             <Logo className="text-black w-full dark:text-white  md:hidden" />
-            <NasimIcon width="56px" className="text-black dark:text-white hidden md:block" />
+            <NasimIcon width="40px" className="text-black dark:text-white hidden md:block" />
           </Link>
         </Row>
 
@@ -52,7 +52,7 @@ export default function Header({}: Props) {
         <VectorButton
           htmlFor="isFnNotificationPopUpOpen"
           id="isFnNotificationPopUpOpenLabelButton"
-          className="hover:bg-gray-100 w-[38px] h-[38px] dark:hover:bg-gray-800 mr-2   peer-checked/isFnNotificationPopUpOpen:bg-gray-100 dark:peer-checked/isFnNotificationPopUpOpen:bg-gray-800 dark:peer-checked/isFnNotificationPopUpOpen:[&>svg]:!text-gray-400 peer-checked/isFnNotificationPopUpOpen:[&>svg]:!text-gray-950 "
+          className="mr-1   peer-checked/isFnNotificationPopUpOpen:bg-gray-100 dark:peer-checked/isFnNotificationPopUpOpen:bg-gray-800 dark:peer-checked/isFnNotificationPopUpOpen:[&>svg]:!text-white peer-checked/isFnNotificationPopUpOpen:[&>svg]:!text-gray-950 "
           Icon={RiNotification2Line}
         />
 
@@ -247,7 +247,7 @@ export default function Header({}: Props) {
         <VectorButton
           htmlFor="isFnAppsPopUpOpen"
           id="isFnAppsPopUpOpenLabelButton"
-          className="mr-2 w-[38px] h-[38px] dark:peer-checked/isFnAppsPopUpOpen:bg-gray-800 peer-checked/isFnAppsPopUpOpen:bg-gray-100 dark:peer-checked/isFnAppsPopUpOpen:[&>svg]:text-gray-400 peer-checked/isFnAppsPopUpOpen:text-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800"
+          className="mr-1 dark:peer-checked/isFnAppsPopUpOpen:bg-gray-800 peer-checked/isFnAppsPopUpOpen:bg-gray-100 dark:peer-checked/isFnAppsPopUpOpen:[&>svg]:text-white peer-checked/isFnAppsPopUpOpen:text-gray-800"
           Icon={RiApps2Line}
         />
 

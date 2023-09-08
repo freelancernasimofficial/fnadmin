@@ -57,7 +57,7 @@ export const MenuItemDropDown = ({ children, title, Icon }: DropDownLabel) => {
           <Icon className="flex-shrink-0 w-5 h-5 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         ) : null}
 
-        <div className="flex flex-1 group-hover:[&>svg]:text-white  items-center justify-between">
+        <div className="flex flex-1 group-hover:[&>svg]:text-white  items-center menuItemText justify-between">
           <span className="dark:text-white ml-3"> {title}</span>{' '}
           <IoCaretDown
             className="dark:text-gray-400 group-hover:!text-black dark:group-hover:!text-white  text-gray-500"

@@ -10,7 +10,12 @@ type Props = {
 
 export default function Button({ Icon, variant, title, className, onClick }: Props) {
   return (
-    <button onClick={onClick} className={`zoomOutOnClick ${getClassName(variant)} text-center flex-row text-base justify-center flex items-center ${className ?? ' '}`}>
+    <button
+      onClick={onClick}
+      className={`zoomOutOnClick transition-transform duration-75 ${getClassName(
+        variant
+      )} text-center flex-row text-base justify-center flex items-center ${className ?? ' '}`}
+    >
       {Icon ? <Icon className="mr-2" size={20} /> : null}
       {title}
     </button>
