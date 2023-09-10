@@ -11,7 +11,7 @@ type Props = {
 export default function VectorButton({ SvgClassName, Icon, className, ...props }: Props) {
   return (
     <label
-      className={`zoomOutOnClick group hover:bg-gray-100 transition-transform duration-75 dark:hover:bg-gray-800  cursor-pointer  font-medium rounded-full w-10 h-10 p-[8px]   flex justify-center items-center  ${
+      className={`zoomOutOnClick group hover:bg-gray-100 transition-transform duration-75 dark:hover:bg-gray-800  cursor-pointer  font-medium rounded-full w-10 h-10 p-[9px]   flex justify-center items-center  ${
         className ? className : ''
       }`}
       {...props}

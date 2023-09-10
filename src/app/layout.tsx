@@ -2,8 +2,10 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Header from '../components/layout/Header'
-import SideMenu, { SideMenuProps } from '../components/layout/SideMenu'
-import { IoApps, IoLogIn, IoLogInOutline, IoPerson, IoSchool, IoSettings } from 'react-icons/io5'
+import SideMenu from '../components/layout/SideMenu'
+import LeftSidebar from '../components/layout/LeftSidebar'
+import RightSidebar from '../components/layout/RightSidebar'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -12,51 +14,12 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const navLinks: SideMenuProps['data'] = [
-    {
-      title: 'Dashboard',
-      icon: IoApps,
-      href: '/dashboard',
-    },
-    {
-      title: 'Courses',
-      icon: IoSchool,
-      href: '/dashboard/courses',
-    },
-    {
-      title: 'Sign In',
-      icon: IoPerson,
-      href: '/signin',
-    },
-    {
-      title: 'Settings',
-      icon: IoSettings,
-      href: '/dashboard',
-      dropdownLinks: [
-        {
-          title: 'Dashboard',
-          icon: IoApps,
-          href: '/dashboard',
-        },
-        {
-          title: 'Courses',
-          icon: IoSchool,
-          href: '/dashboard/courses',
-        },
-        {
-          title: 'Sign In',
-          icon: IoPerson,
-          href: '/signin',
-        },
-      ],
-    },
-  ]
   return (
     <html lang="en" className="dark">
       <body className={inter.className + ' ' + 'dark:bg-gray-950 bg-gray-100 antialiased'}>
         <Header />
-        <SideMenu className="left-0 md:-translate-x-full" data={navLinks} />
-        <SideMenu className="right-0  md:translate-x-full" data={navLinks} />
+        <LeftSidebar />
+        <RightSidebar />
         {children}
       </body>
     </html>
