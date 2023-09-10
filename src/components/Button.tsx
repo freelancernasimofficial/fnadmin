@@ -1,5 +1,5 @@
 import React, { HTMLAttributes } from 'react'
-import { IoHome } from 'react-icons/io5'
+import { IoHome } from '@react-icons/all-files/io5'
 type Props = {
   variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'info' | 'dark'
   className?: HTMLAttributes<HTMLButtonElement>['className']

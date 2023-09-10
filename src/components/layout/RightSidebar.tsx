@@ -1,5 +1,8 @@
 import React from 'react'
-import { IoApps, IoLogIn, IoLogInOutline, IoPerson, IoSchool, IoSettings } from 'react-icons/io5'
+import { IoApps } from '@react-icons/all-files/io5/IoApps'
+import { IoPerson } from '@react-icons/all-files/io5/IoPerson'
+import { IoSchool } from '@react-icons/all-files/io5/IoSchool'
+import { IoSettings } from '@react-icons/all-files/io5/IoSettings'
 import SideMenu, { SideMenuProps } from './SideMenu'
 const navLinks: SideMenuProps['data'] = [
   {
@@ -44,7 +47,7 @@ type Props = {}
 
 export default function RightSidebar({}: Props) {
   return (
-    <div className="fixed flex flex-col h-screen justify-start right-0 top-0 pt-12 dark:bg-gray-900  bg-white">
+    <div className="fixed z-15 flex flex-col h-screen justify-start right-0 top-0 pt-12 dark:bg-gray-900  bg-white">
       {' '}
       <SideMenu position="right" className="right-0  md:translate-x-full" data={navLinks} />
     </div>

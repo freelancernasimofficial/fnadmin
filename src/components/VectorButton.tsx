@@ -1,5 +1,5 @@
 import React, { ButtonHTMLAttributes, HTMLAttributes, LabelHTMLAttributes, SVGAttributes } from 'react'
-import { IoArrowForward } from 'react-icons/io5'
+import { IoArrowForward } from '@react-icons/all-files/io5'
 type Props = {
   rounded?: boolean
   outlined?: boolean

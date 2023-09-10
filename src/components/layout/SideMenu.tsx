@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React, { HTMLAttributes } from 'react'
 
-import { IoApps } from 'react-icons/io5'
+import { IoApps } from '@react-icons/all-files/io5/IoApps'
 
 export type SideMenuProps = {
   position: 'left' | 'right'

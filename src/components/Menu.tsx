@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React, { HTMLAttributes } from 'react'
-import { IoHomeOutline, IoCaretDown, IoCaretUp } from 'react-icons/io5'
+import { IoHomeOutline, IoCaretDown, IoCaretUp } from '@react-icons/all-files/io5'
 type Props = {
   children: React.ReactNode
 } & HTMLAttributes<HTMLUListElement>
