@@ -1,7 +1,11 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  content: ['./src/pages/**/*.{js,ts,jsx,tsx,mdx}', './src/components/**/*.{js,ts,jsx,tsx,mdx}', './src/app/**/*.{js,ts,jsx,tsx,mdx}'],
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
 
   darkMode: 'class',
   theme: {
@@ -37,8 +41,29 @@ const config: Config = {
     },
 
     extend: {
+      zIndex: {
+        5: '5',
+        15: '15',
+        25: '25',
+        35: '35',
+        45: '45',
+        55: '55',
+        60: '60',
+        65: '65',
+        70: '70',
+        75: '75',
+        80: '80',
+        85: '85',
+        90: '90',
+        95: '95',
+        100: '100',
+      },
+
       width: {
         '100': '400px',
+      },
+      padding: {
+        18: '4.5rem',
       },
       colors: {
         FnPrimary: '#3718ff',

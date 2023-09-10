@@ -5,7 +5,6 @@ import Link from 'next/link'
 import Avatar from '../Avatar'
 import { RiApps2Line, RiNotification2Line } from 'react-icons/ri'
 import { HiMenuAlt2 } from 'react-icons/hi'
-import Row from '../Row'
 import VectorButton from '../VectorButton'
 import Logo, { NasimIcon } from './Logo'
 
@@ -13,9 +12,9 @@ type Props = {}
 
 export default function Header({}: Props) {
   return (
-    <nav className="bg-white border-b border-gray-200 px-4 py-2.5 dark:bg-gray-900 dark:border-gray-800 fixed left-0 right-0 top-0 z-[50]">
+    <nav className="bg-white shadow  px-4 py-2.5 dark:bg-gray-900  fixed left-0 right-0  top-0 z-20">
       <div className="flex flex-wrap justify-between items-center relative">
-        <Row className="flex flex-1 justify-start items-center">
+        <div className="flex flex-1 justify-start items-center">
           <label
             htmlFor="isLeftDrawerActive"
             id="leftDrawerOpenLabel"
@@ -34,11 +33,11 @@ export default function Header({}: Props) {
             <span className="sr-only">Toggle sidebar</span>
           </label>
 
-          <Link href="/" className="flex justify-start">
-            <Logo className="text-black w-full dark:text-white  md:hidden" />
-            <NasimIcon width="40px" className="text-black dark:text-white hidden md:block" />
+          <Link href="/" className="block">
+            <Logo className="text-black w-full dark:text-white shrink-0 md:hidden" />
+            <NasimIcon width="40px" className="text-black shrink-0 dark:text-white hidden md:block" />
           </Link>
-        </Row>
+        </div>
 
         <input
           aria-labelledby="isFnNotificationPopUpOpenLabelButton isFnNotificationPopUpCloseLabelButton"
@@ -54,15 +53,15 @@ export default function Header({}: Props) {
         />
 
         <label
-          className="absolute hidden h-0 w-0 left-0 top-0 peer-checked/isFnNotificationPopUpOpen:w-screen peer-checked/isFnNotificationPopUpOpen:h-screen peer-checked/isFnNotificationPopUpOpen:block bg-opacity-0"
+          className="absolute z-25 hidden h-0 w-0 left-0 top-0 peer-checked/isFnNotificationPopUpOpen:w-screen peer-checked/isFnNotificationPopUpOpen:h-screen peer-checked/isFnNotificationPopUpOpen:block bg-opacity-0"
           id="isFnNotificationPopUpCloseLabelButton"
           htmlFor="isFnNotificationPopUpOpen"
         ></label>
         <div
-          className="hidden xs:w-full absolute top-8 right-0 w-100 shrink-0 peer-checked/isFnNotificationPopUpOpen:!block overflow-hidden z-[70] my-4  text-base list-none bg-white  divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-800 rounded-xl"
+          className="hidden xs:w-full absolute top-8 right-0 w-100 shrink-0 peer-checked/isFnNotificationPopUpOpen:!block overflow-hidden z-30 my-4  text-base list-none bg-white  divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-800 rounded-xl"
           id="notification-dropdown"
         >
-          <div className="block py-2 px-4 text-base font-medium text-center text-gray-700 bg-gray-50 dark:bg-gray-600 dark:text-gray-300">
+          <div className="block py-2 px-4 text-base font-semibold text-center text-gray-800  bg-gray-200 dark:bg-gray-600 dark:text-gray-300">
             Notifications
           </div>
           <div>
@@ -212,12 +211,12 @@ export default function Header({}: Props) {
           </div>
           <a
             href="#"
-            className="block py-2 text-md font-medium text-center text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-gray-600 dark:text-white dark:hover:underline"
+            className="block py-2 text-md font-semibold text-center text-gray-800 bg-gray-200 hover:bg-gray-100 dark:bg-gray-600 dark:text-white dark:hover:underline"
           >
             <div className="inline-flex items-center">
               <svg
                 aria-hidden="true"
-                className="mr-2 w-4 h-4 text-gray-500 dark:text-gray-400"
+                className="mr-2 w-4 h-4 text-gray-800 dark:text-gray-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -251,15 +250,15 @@ export default function Header({}: Props) {
         {/* Dropdown menu */}
 
         <label
-          className="absolute hidden h-0 w-0 left-0 top-0 peer-checked/isFnAppsPopUpOpen:w-screen peer-checked/isFnAppsPopUpOpen:h-screen peer-checked/isFnAppsPopUpOpen:block bg-opacity-0"
+          className="absolute z-25 hidden h-0 w-0 left-0 top-0 peer-checked/isFnAppsPopUpOpen:w-screen peer-checked/isFnAppsPopUpOpen:h-screen peer-checked/isFnAppsPopUpOpen:block bg-opacity-0"
           id="isFnAppsPopUpCloseLabelButton"
           htmlFor="isFnAppsPopUpOpen"
         ></label>
         <div
-          className="hidden xs:w-full w-80 absolute top-8 right-0 shrink-0 peer-checked/isFnAppsPopUpOpen:!block overflow-hidden z-50 my-4  text-base list-none bg-white  divide-y divide-gray-100 shadow-lg dark:bg-gray-800 dark:divide-gray-600 rounded-xl"
+          className="hidden xs:w-full w-80 absolute top-8 right-0 shrink-0 peer-checked/isFnAppsPopUpOpen:!block overflow-hidden z-30 my-4  text-base list-none bg-white  divide-y divide-gray-100 shadow-lg dark:bg-gray-800 dark:divide-gray-600 rounded-xl"
           id="FnAppsPopUp"
         >
-          <div className="block py-2 px-4 text-base font-medium text-center text-gray-700 bg-gray-50 dark:bg-gray-600 dark:text-gray-300">
+          <div className="block py-2 px-4 text-base font-semibold text-center text-gray-800 bg-gray-200 dark:bg-gray-600 dark:text-gray-300">
             Apps
           </div>
           <div className="grid grid-cols-3 gap-4 p-4">

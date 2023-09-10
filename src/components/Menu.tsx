@@ -1,16 +1,28 @@
 import Link from 'next/link'
 import React, { HTMLAttributes } from 'react'
 import { IoHomeOutline, IoCaretDown, IoCaretUp } from 'react-icons/io5'
-import Row from './Row'
 type Props = {
   children: React.ReactNode
-} & HTMLAttributes<HTMLDivElement>
+} & HTMLAttributes<HTMLUListElement>
 
 export default function Menu({ children, className, ...props }: Props) {
   return (
-    <div id="leftDrawerMenu" className={`flex flex-col flex-1 font-medium ${className ?? ''}`} {...props}>
-      {children}
-    </div>
+    <>
+      <input
+        className="peer/leftDrawerCollapseStatus h-0 w-0 hidden scale-0 absolute left-[99999px]"
+        type="checkbox"
+        aria-labelledby="leftDrawerCollapsLabel leftDrawerExtendLabel"
+        id="isLeftDrawerCollapsed"
+      />
+      <ul
+        className={`flex [&>li]:!cursor-pointer peer-checked/leftDrawerCollapseStatus:[&>li>a>#menuItemText]:hidden peer-checked/leftDrawerCollapseStatus:[&>li>ul]:absolute peer-checked/leftDrawerCollapseStatus:[&>li>ul]:left-full peer-checked/leftDrawerCollapseStatus:[&>li>ul]:py-3 peer-checked/leftDrawerCollapseStatus:[&>li>ul]:rounded-r-lg peer-checked/leftDrawerCollapseStatus:[&>li>ul>li>a>#menuItemText]:w-auto  peer-checked/leftDrawerCollapseStatus:[&>li>ul]:mt-0  peer-checked/leftDrawerCollapseStatus:[&>li>ul]:w-60 peer-checked/leftDrawerCollapseStatus:[&>li>ul]:bg-white peer-checked/leftDrawerCollapseStatus:[&>li>ul]:shadow peer-checked/leftDrawerCollapseStatus:[&>li>ul]:pl-0   flex-col flex-1 font-medium ${
+          className ?? ''
+        }`}
+        {...props}
+      >
+        {children}
+      </ul>
+    </>
   )
 }
 type MenuItemProps = {
@@ -18,21 +30,29 @@ type MenuItemProps = {
   Icon?: typeof IoHomeOutline
   href: string
   className?: HTMLAttributes<HTMLAnchorElement>['className']
+  tabIndex?: number
 }
-export const MenuItem = ({ className, href, title, Icon }: MenuItemProps) => {
+export const MenuItem = ({ tabIndex, className, href, title, Icon }: MenuItemProps) => {
   return (
-    <Link
-      href={href}
-      className={`flex items-center h-10 mx-3 p-2 text-gray-900 rounded-md dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 group ${
-        className ?? ''
-      }`}
-    >
-      {Icon ? (
-        <Icon className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
-      ) : null}
+    <li tabIndex={tabIndex} className={`cursor-pointer flex flex-col group `}>
+      <Link
+        className={`flex  justify-center rounded-md items-center h-10 mx-3 px-3 py-2 group-focus-within:bg-gray-100 dark:group-focus-within:bg-gray-800 group-hover:bg-gray-100 dark:group-hover:bg-gray-800 ${
+          className ?? ''
+        }`}
+        href={href}
+      >
+        {Icon ? (
+          <Icon className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+        ) : null}
 
-      <span className="ml-3 menuItemText">{title}</span>
-    </Link>
+        <span
+          id="menuItemText"
+          className="items-center w-48 pl-3 justify-between flex flex-1   text-black dark:text-white"
+        >
+          {title}
+        </span>
+      </Link>
+    </li>
   )
 }
 type DropDownLabel = {
@@ -40,40 +60,37 @@ type DropDownLabel = {
   Icon?: typeof IoHomeOutline
   children?: React.ReactNode
   className?: HTMLAttributes<HTMLDivElement>['className']
+  tabIndex?: number
 }
 
-export const MenuItemDropDown = ({ children, className, title, Icon }: DropDownLabel) => {
+export const MenuItemDropDown = ({ children, tabIndex, className, title, Icon }: DropDownLabel) => {
   return (
-    <div id="dropdownItemWrapper" className={`flex  flex-col ${className ?? ''}`}>
-      <input
-        type="checkbox"
-        className="scale-0 invisible w-0 h-0 hidden absolute left-[99999px] peer/dropdown top-0"
-        id={title?.replaceAll(' ', '')}
-      />
-      <label
-        htmlFor={title?.replaceAll(' ', '')}
-        className="flex h-10 max-h-10 min-h-10  group flex-row p-2 mx-3    items-center justify-between cursor-pointer peer-checked/dropdown:[&>div>#dropdowncaretUp]:!inline peer-checked/dropdown:[&>div>#dropdowncaretdown]:!hidden  rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
+    <li tabIndex={tabIndex} className={`cursor-pointer  flex flex-col items-start  group/dropdown`}>
+      <Link
+        href="#"
+        className={`flex justify-center rounded-md items-center h-10 mx-3 px-3 py-2 group-focus-within/dropdown:bg-gray-100 dark:group-focus-within/dropdown:bg-gray-800 group-focus/dropdown:bg-gray-100 dark:group-focus/dropdown:bg-gray-800 group-hover/dropdown:bg-gray-100 dark:group-hover/dropdown:bg-gray-800  ${
+          className ?? ''
+        }`}
       >
         {Icon ? (
-          <Icon className="flex-shrink-0 w-5 h-5 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+          <Icon className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover/dropdown:text-gray-900 dark:group-hover/dropdown:text-white" />
         ) : null}
 
-        <div className="flex flex-1 group-hover:[&>svg]:text-white  items-center menuItemText justify-between">
-          <span className="dark:text-white ml-3"> {title}</span>{' '}
-          <IoCaretDown
-            className="dark:text-gray-400 group-hover:!text-black dark:group-hover:!text-white  text-gray-500"
-            id="dropdowncaretdown"
-          />
-          <IoCaretUp
-            className="dark:text-gray-400  group-hover:!text-black dark:group-hover:!text-white  text-gray-500 hidden"
-            id="dropdowncaretUp"
-          />
-        </div>
-      </label>
-
-      <div className={`hidden pl-6 py-2 peer-checked/dropdown:!block bg-gray-50 dark:bg-black dark:bg-opacity-30`}>
+        <span
+          id="menuItemText"
+          className="items-center justify-between w-48 pl-3 flex flex-1   text-black dark:text-white"
+        >
+          {title}
+          <IoCaretDown className="group-focus/dropdown:hidden group-focus-within/dropdown:hidden" />
+          <IoCaretUp className="hidden group-focus/dropdown:block group-focus-within/dropdown:block" />
+        </span>
+      </Link>
+      <ul
+        id="submenu"
+        className="[&>li>a]:px-0 [&>li>a>#menuItemText]:w-auto pl-8 mt-2 w-full hidden group-focus/dropdown:block group-focus-within/dropdown:block"
+      >
         {children}
-      </div>
-    </div>
+      </ul>
+    </li>
   )
 }
